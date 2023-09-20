@@ -58,7 +58,7 @@ pnpm create vite my-vue-app --template vue-ts
 
 #### 修改 Vite 配置文件
 
-Vite 配置文件 vite.config.ts 位于根目录下，项目启动时会自动读取。
+Vite 配置文件 `vite.config.ts` 位于根目录下，项目启动时会自动读取。
 
 关于 Vite 更多配置项及用法，请查看 [Vite](https://cn.vitejs.dev/) 官网。
 
@@ -109,7 +109,7 @@ export default defineConfig({
 
 #### 集成路由工具 Vue Router
 
-1. 安装支持 Vue 的路由工具 vue-router
+1. 安装支持 Vue 的路由工具 **vue-router**
 
 ```bash
 pnpm i vue-router@4
@@ -149,7 +149,7 @@ export function setupRouter(app: App<Element>) {
 
 根据本项目路由配置的实际情况，你需要在 src 下创建 views 目录，用来存储页面组件。
 
-我们在 views 目录下创建 home.vue。
+我们在 views 目录下创建 `home.vue`。
 
 3. 在 main.ts 文件中挂载路由配置
 
@@ -174,7 +174,7 @@ bootstrap();
 
 #### 集成状态管理工具 Pinia
 
-1. 用你喜欢的包管理器安装 pinia：
+1. 用你喜欢的包管理器安装 **pinia：**
 
 ```bash
 # npm
@@ -266,7 +266,7 @@ npm i sass -D
 
 EditorConfig 有助于为不同 IDE 编辑器上处理同一项目的多个开发人员维护一致的编码风格。
 
-在项目根目录下增加 **.editorconfig** 文件：
+在项目根目录下增加 `.editorconfig` 文件：
 
 ```bash
 # Editor configuration, see http://editorconfig.org
@@ -301,7 +301,7 @@ pnpm i prettier -D
 
 2. 创建 Prettier 配置文件
 
-在本项目根目录下创建 **.prettierrc** 文件。关于更多配置项信息，请前往[官网](https://prettier.io/docs/en/options.html)查看
+在本项目根目录下创建 `.prettierrc` 文件。关于更多配置项信息，请前往[官网](https://prettier.io/docs/en/options.html)查看
 
 ```json
 {
@@ -322,7 +322,7 @@ pnpm i prettier -D
 npx prettier --write .
 ```
 
-package.json 文件中添加
+`package.json` 文件中添加
 
 ```json
 // package.json
@@ -345,7 +345,7 @@ ESLint 是一款用于查找并报告代码中问题的工具，并且支持部�
 pnpm create @eslint/config
 ```
 
-按需选择完配置，安装成功后会自动创建.eslintrc.js 配置文件。
+按需选择完配置，安装成功后会自动创建 `.eslintrc.js` 配置文件。
 
 ```js
 module.exports = {
@@ -377,7 +377,7 @@ module.exports = {
 
 根据项目实际情况，如果我们有额外的 ESLint 规则，也在此文件中追加。
 
-package.json 文件中添加
+`package.json` 文件中添加
 
 ```json
 // package.json
@@ -404,7 +404,7 @@ Stylelint 是一个强大的，现代的代码检查工具，与 ESLint 类似�
 npm i stylelint stylelint-config-standard stylelint-config-html stylelint-config-recess-order stylelint-config-recommended-scssstylelint-config-recommended-vue stylelint-config-standard stylelint-config-standard-scss -D
 ```
 
-2. 创建 **.stylelintrc.js** 配置文件
+2. 创建 `.stylelintrc.js` 配置文件
 
 ```js
 // @see: https://stylelint.io
@@ -452,7 +452,7 @@ module.exports = {
 };
 ```
 
-package.json 文件中添加
+`package.json` 文件中添加
 
 ```json
 // package.json
@@ -483,7 +483,7 @@ package.json 文件中添加
 npm i eslint-plugin-prettier eslint-config-prettier -D
 ```
 
-- 在 **.eslintrc.js** 添加 prettier 插件
+- 在 `.eslintrc.js` 添加 prettier 插件
 
 ```js
 module.exports = {
@@ -541,7 +541,7 @@ lint-staged 这个工具一般结合 husky 来使用，它可以让 husky 的 ho
 pnpm i lint-staged -D
 ```
 
-2. 在 package.json 里增加 lint-staged 配置项
+2. 在 `package.json` 里增加 **lint-staged** 配置项
 
 ```json
 "lint-staged": {
@@ -584,7 +584,7 @@ pnpm i lint-staged -D
 
 ##### 安装 commitlint
 
-安装 @commitlint/config-conventional 和 @commitlint/cli
+安装 **@commitlint/config-conventional** 和 **@commitlint/cli**
 
 ```bash
 pnpm i @commitlint/config-conventional @commitlint/cli -D
@@ -592,7 +592,7 @@ pnpm i @commitlint/config-conventional @commitlint/cli -D
 
 ##### 配置 commitlint
 
-- 在项目根目录下创建 **commitlint.config.js** 文件，并填入以下内容：
+- 在项目根目录下创建 `commitlint.config.js` 文件，并填入以下内容：
 
 ```js
 module.exports = { extends: ['@commitlint/config-conventional'] };
