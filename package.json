@@ -1,0 +1,27 @@
+{
+  "name": "sankeyangshu-notes",
+  "version": "1.0.0",
+  "description": "编程笔记、读书笔记、生活感悟、游戏评测",
+  "author": "sankeyangshu",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev --port 8080",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankeyangshu/sankeyangshu-notes.git"
+  },
+  "keywords": [
+    "vitepress",
+    "notes"
+  ],
+  "bugs": {
+    "url": "https://github.com/sankeyangshu/sankeyangshu-notes/issues"
+  },
+  "homepage": "https://github.com/sankeyangshu/sankeyangshu-notes#readme",
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.15"
+  }
+}
