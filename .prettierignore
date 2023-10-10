@@ -1,0 +1,6 @@
+*.md
+dist
+cache
+!README.md
+.vscode
+.idea
