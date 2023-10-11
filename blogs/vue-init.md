@@ -1,3 +1,8 @@
+---
+date: 2023-09-20
+title: 从零开始搭建一套规范的 Vite + Vue3 + TypeScript 前端工程化项目环境
+---
+
 <h1 align="center">
   从零开始搭建一套规范的 Vite + Vue3 + TypeScript 前端工程化项目环境
 </h1>

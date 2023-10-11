@@ -20,6 +20,9 @@ devDependencies:
   vitepress:
     specifier: 1.0.0-rc.15
     version: 1.0.0-rc.15(@algolia/client-search@4.20.0)(search-insights@2.8.2)
+  vue:
+    specifier: ^3.3.4
+    version: 3.3.4
 
 packages:
   /@algolia/autocomplete-core@1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.8.2):

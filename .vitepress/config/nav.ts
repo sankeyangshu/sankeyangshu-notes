@@ -1,14 +1,6 @@
 export const nav = [
-  {
-    text: '前端',
-    items: [
-      {
-        items: [
-          { text: 'Vue', link: '/web/vue/' },
-          // { text: 'React', link: '/web/react/' },
-          // { text: 'TypeScript', link: '/web/typescript/' },
-        ],
-      },
-    ],
-  },
+  { text: '✨Home', link: '/' },
+  { text: '🦾About', link: '/about' },
+  { text: '🛠Using', link: '/using' },
+  { text: '🔌Links', link: '/links' },
 ];
