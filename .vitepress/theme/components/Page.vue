@@ -11,9 +11,9 @@
       <p>Sorry, no blogs yet.</p>
     </div>
     <div class="pagination">
-      <button class="left" v-if="hasPrevPage" @click="pageNumber--">Previous page</button>
+      <button class="left" v-if="hasPrevPage" @click="pageNumber--">&lt;</button>
       <div v-if="pageTotal > 1">{{ `${pageNumber}/${pageTotal}` }}</div>
-      <button class="right" v-if="hasNextPage" @click="pageNumber++">Next page</button>
+      <button class="right" v-if="hasNextPage" @click="pageNumber++">&gt;</button>
     </div>
   </div>
 </template>
@@ -92,32 +92,29 @@ const pageBlogs = computed(() => {
   width: 85%;
   display: block;
   border-radius: 10px;
-  padding: 0 20px;
+  padding: 7px 20px;
   margin: 10px;
   background: var(--vp-c-bg);
   max-width: 600px;
-  box-shadow: 6px 6px var(--vp-c-brand);
-  border: 4px solid #3f4e4f;
   cursor: pointer;
+  box-shadow: 8px 8px 16px var(--vp-c-bg-1), -8px -8px 16px var(--vp-c-bg-2);
 }
 .blog:hover {
   text-decoration: none;
-  transform: translate(-2px, -2px);
-  box-shadow: 10px 10px var(--vp-c-brand);
+  box-shadow: inset 8px 8px 16px var(--vp-c-bg-1), inset -8px -8px 16px var(--vp-c-bg-2);
 }
 .title {
   color: var(--vp-c-brand);
   font-size: 1.2em;
   font-weight: bold;
 }
-.date {
-  padding-bottom: 7px;
-}
+
 .pagination {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 85%;
+  height: 40px;
   max-width: 600px;
   margin: 0 auto;
   position: relative;
@@ -130,23 +127,15 @@ button {
   cursor: pointer;
   font-size: 1.2em;
   font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--vp-c-bg);
+  box-shadow: 9px 9px 18px var(--vp-c-bg-1), -9px -9px 18px var(--vp-c-bg-2);
 }
 
-button::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--vp-c-brand);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-button:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+button:hover {
+  box-shadow: inset 9px 9px 18px var(--vp-c-bg-1), inset -9px -9px 18px var(--vp-c-bg-2);
 }
 
 .left {

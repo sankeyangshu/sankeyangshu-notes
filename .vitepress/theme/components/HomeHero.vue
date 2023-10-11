@@ -33,8 +33,8 @@
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  box-shadow: 0 0 20px 20px var(--my-blue-light);
-  background-color: var(--my-blue-light);
+  box-shadow: 0 0 20px 20px var(--vp-c-brand);
+  background-color: var(--vp-c-brand);
   position: relative;
 }
 
@@ -48,7 +48,7 @@
 .introduce {
   font-size: 28px;
   margin-top: 70px;
-  color: var(--my-blue-light);
+  color: var(--vp-c-brand);
   margin-bottom: 20px;
 }
 
@@ -67,14 +67,14 @@
 .link {
   display: inline-block;
   width: auto;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 5px 10px;
-  border: 3px solid var(--my-blue-light);
+  box-shadow: 8px 8px 16px var(--vp-c-bg-1), -8px -8px 16px var(--vp-c-bg-2);
 }
 
 .link:hover {
-  color: var(--my-blue-light);
-  transform: translate(-2px, -2px);
+  color: var(--vp-c-brand);
+  box-shadow: inset 8px 8px 16px var(--vp-c-bg-1), inset -8px -8px 16px var(--vp-c-bg-2);
 }
 
 @keyframes spin {

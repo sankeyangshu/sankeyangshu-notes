@@ -13,6 +13,7 @@
       <Page />
     </template>
   </Layout>
+  <CopyWright />
 </template>
 
 <script lang="ts" setup>
@@ -21,6 +22,7 @@ import Progress from './Progress.vue';
 import Avatar from './Avatar.vue';
 import HomeHero from './HomeHero.vue';
 import Page from './Page.vue';
+import CopyWright from './CopyWright.vue';
 
 const { Layout } = DefaultTheme;
 </script>

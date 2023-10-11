@@ -7,7 +7,6 @@ export default defineConfig({
   title: '三棵杨树',
   description: '编程笔记、读书笔记、生活感悟、游戏评测',
   lastUpdated: false, // 最近更新时间
-  appearance: false, // 禁止切换暗黑模式
   head: [
     [
       'meta',
@@ -43,10 +42,6 @@ export default defineConfig({
         link: 'https://github.com/sankeyangshu/sankeyangshu-notes',
       },
     ],
-
-    footer: {
-      copyright: `Powered by <a href="https://github.com/sankeyangshu">sankeyangshu</a> | Copyright © 2023 | MIT License`,
-    },
 
     search: {
       provider: 'local',
