@@ -17,5 +17,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": [".vitepress/**/*.ts", ".vitepress/**/*.vue"]
+  "include": ["docs/.vitepress/**/*.ts", "docs/.vitepress/**/*.vue"]
 }

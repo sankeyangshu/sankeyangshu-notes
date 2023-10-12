@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress';
-import { nav } from './config/nav';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -34,7 +33,13 @@ export default defineConfig({
   themeConfig: {
     outline: [2, 3],
     // https://vitepress.dev/reference/default-theme-config
-    nav,
+
+    nav: [
+      { text: '✨Home', link: '/' },
+      { text: '🦾About', link: '/about' },
+      { text: '🛠Using', link: '/using' },
+      { text: '🔌Links', link: '/links' },
+    ],
 
     socialLinks: [
       {

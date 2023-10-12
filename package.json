@@ -5,9 +5,9 @@
   "author": "sankeyangshu",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev --port 8080",
-    "build": "vitepress build",
-    "preview": "vitepress preview",
+    "dev": "vitepress dev docs --port 8080",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
     "prepare": "husky install",
     "format": "prettier --check --write .",
     "lint": "tsc --noEmit"
