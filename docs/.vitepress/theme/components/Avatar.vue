@@ -8,7 +8,7 @@ import email from '/email.svg?raw';
 
 const members = [
   {
-    avatar: '/avatar.png',
+    avatar: '/avatar.webp',
     name: 'sankeyangshu',
     title: 'Blogger',
     links: [
