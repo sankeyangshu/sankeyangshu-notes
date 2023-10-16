@@ -9,7 +9,7 @@ export interface BlogType {
 declare const data: BlogType[];
 export { data };
 
-export default createContentLoader('blogs/*.md', {
+export default createContentLoader('posts/*.md', {
   transform(raw): BlogType[] {
     return raw
       .map((blog) => {
