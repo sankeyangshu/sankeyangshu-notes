@@ -4,7 +4,6 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
   lang: 'zh-CN',
   title: '三棵杨树',
-  base: '/sankeyangshu-notes/',
   description: '编程笔记、读书笔记、生活感悟、游戏评测',
   lastUpdated: false, // 最近更新时间
   head: [
