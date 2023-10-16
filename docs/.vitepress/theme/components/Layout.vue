@@ -26,5 +26,3 @@ import CopyWright from './CopyWright.vue';
 
 const { Layout } = DefaultTheme;
 </script>
-
-<style lang="scss" scoped></style>
