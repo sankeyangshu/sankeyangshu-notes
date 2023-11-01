@@ -430,7 +430,7 @@ title: 20天 100句 毫不费力背完高考3500词！
 
 :::
 
-3. The greengrocer's **warehouse** was a **handy** addition to the market, but his **casual** **attitude** sometimes led to a **compromnise** in quality.
+3. The greengrocer's **warehouse** was a **handy** addition to the market, but his **casual** **attitude** sometimes led to a **compromise** in quality.
 
 ::: details 查看释义
 
@@ -440,7 +440,7 @@ title: 20天 100句 毫不费力背完高考3500词！
 * handy: adj. 便利的
 * casual: adj. 随意的
 * attitude: n. 态度; 姿势; 看法;
-* compromnise: n. 妥协; 让步
+* compromise: n. 妥协; 让步
 ```
 
 :::
