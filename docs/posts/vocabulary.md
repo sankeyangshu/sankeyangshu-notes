@@ -610,7 +610,7 @@ title: 20天 100句 毫不费力背完高考3500词！
 
 :::
 
-4. The **jungle** **expedition** turned into a **breakthrough**moment for the **research** team, as they discovered a **clone** of a rare species, **prompting** them to **declare** the finding a significant scientific achievement.
+4. The **jungle** **expedition** turned into a **breakthrough** moment for the **research** team, as they discovered a **clone** of a rare species, **prompting** them to **declare** the finding a significant scientific achievement.
 
 ::: details 查看释义
 
@@ -639,7 +639,7 @@ title: 20天 100句 毫不费力背完高考3500词！
 * attain: v. 取得
 * remarkable: adj. 非凡的
 * establish: v. 建立
-* legacy: n. 传奇
+* legacy: n. 传奇; 遗产
 * monumental: adj. 重要的
 ```
 
