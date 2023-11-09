@@ -7,6 +7,14 @@ export default defineConfig({
   description: '编程笔记、读书笔记、生活感悟、游戏评测',
   lastUpdated: false, // 最近更新时间
   head: [
+    // [
+    //   'link',
+    //   {
+    //     rel: 'icon',
+    //     type: 'image/png',
+    //     href: '/avatar.png',
+    //   },
+    // ],
     [
       'meta',
       {
@@ -38,7 +46,7 @@ export default defineConfig({
       { text: '✨Home', link: '/' },
       { text: '🦾About', link: '/about' },
       { text: '🛠Using', link: '/using' },
-      { text: '🔌Links', link: '/links' },
+      // { text: '🔌Links', link: '/links' },
     ],
 
     socialLinks: [
