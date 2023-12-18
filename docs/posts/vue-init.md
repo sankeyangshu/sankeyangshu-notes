@@ -359,10 +359,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    'plugin:vue/vue3-essential',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extends: ['plugin:vue/vue3-essential', 'plugin:@typescript-eslint/recommended'],
   overrides: [],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -406,7 +403,7 @@ Stylelint 是一个强大的，现代的代码检查工具，与 ESLint 类似�
 1. 安装 Stylelint
 
 ```bash
-npm i stylelint stylelint-config-standard stylelint-config-html stylelint-config-recess-order stylelint-config-recommended-scssstylelint-config-recommended-vue stylelint-config-standard stylelint-config-standard-scss -D
+npm i stylelint stylelint-config-standard stylelint-config-html stylelint-config-recess-order stylelint-config-recommended-scssstylelint-config-recommended-vue stylelint-config-standard-scss -D
 ```
 
 2. 创建 `.stylelintrc.js` 配置文件
@@ -424,15 +421,7 @@ module.exports = {
     'stylelint-config-html/vue', // 配置 vue 中 template 样式格式化
     'stylelint-config-recess-order', // 配置 stylelint css 属性书写顺序插件,
   ],
-  ignoreFiles: [
-    '**/*.js',
-    '**/*.jsx',
-    '**/*.tsx',
-    '**/*.ts',
-    '**/*.json',
-    '**/*.md',
-    '**/*.yaml',
-  ],
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.md', '**/*.yaml'],
   rules: {
     'keyframes-name-pattern': null,
     'function-url-quotes': 'always', // URL 的引号 "always(必须加上引号)"|"never(没有引号)"
