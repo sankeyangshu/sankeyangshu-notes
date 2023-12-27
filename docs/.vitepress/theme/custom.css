@@ -21,9 +21,9 @@
 }
 
 .dark {
-  --vp-c-bg: #22272e;
-  --vp-c-bg-1: #20242b;
-  --vp-c-bg-2: #242a31;
+  --vp-c-bg: #2a2d2f;
+  --vp-c-bg-1: #333739;
+  --vp-c-bg-2: #202325;
   --vp-c-text: #fff;
   --vp-c-brand: var(--my-blue-dark);
 }

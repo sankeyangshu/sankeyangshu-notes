@@ -31,7 +31,6 @@ I often use these extensions:
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
 
-
 ## Chrome Extensions
 
 - [Dark Reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh) - Dark themes suitable for all websites
@@ -54,15 +53,15 @@ I often use these extensions:
 - [`vue-template-base`](https://github.com/sankeyangshu/vue-template-base) - 使用 Vue3 + TS 构建的项目基础模版
 - [`react-template-base`](https://github.com/sankeyangshu/react-template-base) - 使用 React + TS 构建的基础项目模版
 - [`nest-template-cms`](https://github.com/sankeyangshu/nest-template-cms) - 使用 Nest + TS 构建的 CMS 开发框架
-- [`vue-template-admin`](https://github.com/sankeyangshu/vue-template-admin) - 使用 Vue3 + TS 构建的后台管理系统
-- [`react-template-admin`](https://github.com/sankeyangshu/react-template-admin) - 使用 React + TS 构建的后台管理系统
+- [`vue-template-admin`](https://github.com/sankeyangshu-labs/vue-template-admin) - 使用 Vue3 + TS 构建的后台管理系统
+- [`react-template-admin`](https://github.com/sankeyangshu-labs/react-template-admin) - 使用 React + TS 构建的后台管理系统
 
 ## MacOS/Windows APP
 
 ### 全平台(MacOS/Windows/Linux)
 
 - [uTools](https://u.tools/) - 新一代效率工具平台。
-- [Typora](https://typora.io/) -  一款轻量级的 markdown 编辑器。
+- [Typora](https://typora.io/) - 一款轻量级的 markdown 编辑器。
 - [Apifox](https://apifox.com/) - 集 API 文档、API 调试、API Mock、API 自动化测试多项实用功能为一体的 API 管理平台
 - [HBuilderX](https://www.dcloud.io/hbuilderx.html) - uniapp 开发工具
 - [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) - 微信小程序开发工具
@@ -75,5 +74,3 @@ I often use these extensions:
 
 - [PotPlayer](https://potplayer.daum.net/) - 一个功能齐全，开箱即用的视频播放器。
 - [Hyper](https://hyper.is/) - windows Terminal Replacement
-
-

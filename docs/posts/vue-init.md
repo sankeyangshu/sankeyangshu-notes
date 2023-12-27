@@ -403,7 +403,7 @@ Stylelint 是一个强大的，现代的代码检查工具，与 ESLint 类似�
 1. 安装 Stylelint
 
 ```bash
-npm i stylelint stylelint-config-standard stylelint-config-html stylelint-config-recess-order stylelint-config-recommended-scssstylelint-config-recommended-vue stylelint-config-standard-scss -D
+npm i stylelint stylelint-config-standard stylelint-config-html stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-recommended-vue stylelint-config-standard-scss -D
 ```
 
 2. 创建 `.stylelintrc.js` 配置文件

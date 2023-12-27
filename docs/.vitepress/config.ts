@@ -7,14 +7,14 @@ export default defineConfig({
   description: '编程笔记、读书笔记、生活感悟、游戏评测',
   lastUpdated: false, // 最近更新时间
   head: [
-    // [
-    //   'link',
-    //   {
-    //     rel: 'icon',
-    //     type: 'image/png',
-    //     href: '/avatar.png',
-    //   },
-    // ],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/jpg',
+        href: '/logo.jpg',
+      },
+    ],
     [
       'meta',
       {
@@ -39,6 +39,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    logo: '/logo.jpg',
     outline: [2, 3],
     // https://vitepress.dev/reference/default-theme-config
 
