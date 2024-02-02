@@ -20,6 +20,7 @@ Visual Studio Code is a lightweight but powerful source code editor, I believe t
 I often use these extensions:
 
 - [Better Comments (with ELPS support)](https://marketplace.visualstudio.com/items?itemName=AmirHA.better-comments-2)
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 - [Codeium](https://marketplace.visualstudio.com/items?itemName=Codeium.codeium)
 - [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
@@ -30,10 +31,16 @@ I often use these extensions:
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
+- [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets)
+- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+- [Turbo Console Log](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log)
+- [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)
+- [Vscode NestJs Snippets](https://marketplace.visualstudio.com/items?itemName=ashinzekene.nestjs)
 
 ## Chrome Extensions
 
 - [Dark Reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh) - Dark themes suitable for all websites
+- [Axure RP Extension for Chrome](https://chromewebstore.google.com/detail/axure-rp-extension-for-ch/dogkpdfcklifaemcdfbildhcofnopogp) - An extension that allows viewing of locally published Axure RP prototypes (HTML files) from Google Chrome.
 - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) - User scripts for any website
 - [Infinity 新标签页](https://chrome.google.com/webstore/detail/infinity-new-tab/dbfmnekepjoapopniengjbcpnbljalfg) - Redefine your new tab
 - [LocatorJS](https://chrome.google.com/webstore/detail/locatorjs/npbfdllefekhdplbkdigpncggmojpefi) - LocatorJS Chrome Extension - option-click to code (ReactJS)
@@ -41,6 +48,7 @@ I often use these extensions:
 - [Wappalyzer - Technology profiler](https://chrome.google.com/webstore/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg) - Identify web technologies
 - [沉浸式翻译](https://chrome.google.com/webstore/detail/immersive-translate-web-p/bpoadfkcbjbfhfodiogcnhhhpibjhbnh) - 沉浸式网页双语翻译扩展
 - [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) - Browser DevTools extension for debugging Vue.js applications.
+- [React Developer Tools](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) - React debugging tools
 
 ## CLI
 
@@ -53,8 +61,8 @@ I often use these extensions:
 - [`vue-template-base`](https://github.com/sankeyangshu/vue-template-base) - 使用 Vue3 + TS 构建的项目基础模版
 - [`react-template-base`](https://github.com/sankeyangshu/react-template-base) - 使用 React + TS 构建的基础项目模版
 - [`nest-template-cms`](https://github.com/sankeyangshu/nest-template-cms) - 使用 Nest + TS 构建的 CMS 开发框架
-- [`vue-template-admin`](https://github.com/sankeyangshu-labs/vue-template-admin) - 使用 Vue3 + TS 构建的后台管理系统
-- [`react-template-admin`](https://github.com/sankeyangshu-labs/react-template-admin) - 使用 React + TS 构建的后台管理系统
+- [`vue-template-admin`](https://github.com/sankeyangshu/vue-template-admin) - 使用 Vue3 + TS 构建的后台管理系统
+- [`react-template-admin`](https://github.com/sankeyangshu/react-template-admin) - 使用 React + TS 构建的后台管理系统
 
 ## MacOS/Windows APP
 
@@ -69,6 +77,8 @@ I often use these extensions:
 ### MacOS
 
 - [iTerm2](https://iterm2.com/) - macOS Terminal Replacement
+- [超级右键](https://www.better365.cn/irightmousepro.html) - 强大的 macOS 右键菜单工具
+- [iShot](https://www.better365.cn/ishot.html) - macOS 上功能最为全面的截图、录屏、OCR、截图翻译工具
 
 ### Windows
 
