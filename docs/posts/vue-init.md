@@ -13,7 +13,7 @@ title: 从零开始搭建一套规范的 Vite + Vue3 + TypeScript 前端工程�
 - 代码规范
 - 提交规范
 
-> 本项目完整的代码托管在 [GitHub](<(https://github.com/sankeyangshu/vue-template-base)>)，欢迎点亮小星星 🌟🌟
+> 本项目完整的代码托管在 [GitHub](https://github.com/sankeyangshu/vue-template-base)，欢迎点亮小星星 🌟🌟
 
 ### 技术栈
 
