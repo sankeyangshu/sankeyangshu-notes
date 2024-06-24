@@ -407,7 +407,9 @@ npm install -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugi
 
 :::
 
-::: tips 请安装 Eslint@8 版本，Eslint 9 弃用了一些配置，可能会出现问题。 :::
+:::tip
+请安装 Eslint@8 版本，Eslint 9 弃用了一些配置，可能会出现问题。
+:::
 
 安装成功后创建 `.eslintrc.js` 配置文件，并写入以下内容。
 
@@ -647,7 +649,9 @@ npx husky-init && npm install
 2. 创建一个 pre-commit 可以编辑的示例挂钩（默认情况下，npm test 将在提交时运行）
 3. 配置 Git 钩子路径
 
-::: tips 注意这里的 husky 需要安装版本 8，版本 9 不再支持自动创建钩子文件。 :::
+:::tip
+注意这里的 husky 需要安装版本 8，版本 9 不再支持自动创建钩子文件。
+:::
 
 ##### 配置 lint-staged
 
@@ -756,7 +760,9 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
 ```
 
-::: tips 这里的快捷命令必须是 husky8 才支持的，新版本移除了这个命令。:::
+:::tip
+这里的快捷命令必须是 husky8 才支持的，新版本移除了这个命令。
+:::
 
 ### 最后
 
