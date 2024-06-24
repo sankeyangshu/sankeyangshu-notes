@@ -1,10 +1,10 @@
 ---
-date: 2023-09-20
-title: 从零开始搭建一套规范的 Vite + Vue3 + TypeScript 前端工程化项目环境
+date: 2024-06-24
+title: 从零开始搭建一套规范的 Vite + React + TypeScript 前端工程化项目环境
 ---
 
 <h1 align="center">
-  从零开始搭建一套规范的 Vite + Vue3 + TypeScript 前端工程化项目环境
+  从零开始搭建一套规范的 Vite + React + TypeScript 前端工程化项目环境
 </h1>
 
 本文从以下几个方面展开：
@@ -13,16 +13,16 @@ title: 从零开始搭建一套规范的 Vite + Vue3 + TypeScript 前端工程�
 - 代码规范
 - 提交规范
 
-> 本项目完整的代码托管在 [GitHub](<(https://github.com/sankeyangshu/vue-template-base)>)，欢迎点亮小星星 🌟🌟
+> 本项目完整的代码托管在 [GitHub](<(https://github.com/sankeyangshu/react-template)>)，欢迎点亮小星星 🌟🌟
 
 ### 技术栈
 
 - 编程语言：[TypeScript](https://www.typescriptlang.org/zh/) + [JavaScript](https://www.javascript.com/)
 - 构建工具：[Vite](https://cn.vitejs.dev/)
-- 前端框架：[Vue](https://cn.vuejs.org/)
-- 路由工具：[Vue Router](https://router.vuejs.org/zh/)
-- 状态管理：[Pinia](https://pinia.vuejs.org/zh/)
-- CSS 预编译：[Sass](https://sass.bootcss.com/documentation)
+- 前端框架：[React](https://react.dev/)
+- 路由工具：[React Router V6](https://reactrouter.com/en/main)
+- 状态管理：[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
+- CSS 预编译：[Less](https://lesscss.org/) + [UnoCSS](https://unocss.dev/)
 - Git Hook 工具：[husky](https://typicode.github.io/husky/#/) + [lint-staged](https://github.com/okonet/lint-staged)
 - 代码规范：[EditorConfig](http://editorconfig.org) + [Prettier](https://prettier.io/) + [ESLint](https://eslint.org/) + [Stylelint](https://stylelint.io/)
 - 提交规范：[Commitlint](https://commitlint.js.org/#/)
@@ -103,8 +103,8 @@ export default defineConfig({
     ├── styles/                    // 通用 CSS 目录
     ├── utils/                     // 工具函数目录
     ├── views/                     // 页面组件目录
-    ├── App.vue
-    ├── main.ts
+    ├── App.tsx
+    ├── main.tsx
 ├── tests/                         // 单元测试目录
 ├── index.html
 ├── tsconfig.json                  // TypeScript 配置文件
@@ -112,164 +112,180 @@ export default defineConfig({
 └── package.json
 ```
 
-#### 集成路由工具 Vue Router
+#### 集成路由工具 React Router
 
-1. 安装支持 Vue 的路由工具 **vue-router**
-
-```bash
-pnpm i vue-router@4
-```
-
-2. 创建 src/router/index.ts 文件
-
-```sh
-└── src/
-     ├── router/
-         ├── index.ts  // 路由配置文件
-```
-
-```ts
-import { App } from 'vue';
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/Home/index.vue'), // 懒加载组件
-  },
-];
-
-// 创建一个可以被 Vue 应用程序使用的路由实例
-export const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
-});
-
-// 配置路由器
-export function setupRouter(app: App<Element>) {
-  app.use(router);
-}
-```
-
-根据本项目路由配置的实际情况，你需要在 src 下创建 views 目录，用来存储页面组件。
-
-我们在 views 目录下创建 `home.vue`。
-
-3. 在 main.ts 文件中挂载路由配置
-
-```ts
-import { createApp } from 'vue';
-+ import { setupRouter } from '@/router';
-import App from './App.vue';
-import './styles/index.scss'; // 全局css
-
-function bootstrap() {
-  // 创建实例
-  const app = createApp(App);
-
-+  // 配置路由
-+  setupRouter(app);
-
-  app.mount('#app');
-}
-
-bootstrap();
-```
-
-#### 集成状态管理工具 Pinia
-
-1. 用你喜欢的包管理器安装 **pinia：**
+1. 安装支持 React 的路由工具 **react-router-dom**
 
 ::: code-group
 
 ```bash [pnpm]
-pnpm install pinia
+pnpm add react-router-dom
 ```
 
 ```bash [yarn]
-yarn add pinia
+yarn add react-router-dom
 ```
 
 ```bash [npm]
-npm install pinia
+npm install react-router-dom
 ```
 
 :::
 
-2. 创建 src/store/index.ts 文件
+2. 创建 src/router/index.tsx 文件
+
+```sh
+└── src/
+     ├── router/
+         ├── index.tsx  // 路由配置文件
+```
+
+```ts
+import { RouteObject, useRoutes } from 'react-router-dom';
+import Home from '@/views/Home';
+
+/**
+ * 公共路由
+ */
+export const constantRoutes: RouteObject[] = [
+  {
+    path: '/',
+    id: 'Home',
+    element: <Home />,
+  },
+];
+
+// 创建一个可以被 React 应用程序使用的路由实例
+const router = () => {
+  const routes = useRoutes(constantRoutes);
+  return routes;
+};
+
+export default router;
+```
+
+根据本项目路由配置的实际情况，你需要在 src 下创建 views 目录，用来存储页面组件。
+
+我们在 views 目录下创建 `home.tsx`。
+
+3. 在 App.tsx 文件中挂载路由配置
+
+```ts
+import { HashRouter } from 'react-router-dom';
+import Router from './routers';
+
+const App = () => {
+  return (
+    <HashRouter>
+      <Router />
+    </HashRouter>
+  );
+};
+
+export default App;
+```
+
+#### 集成状态管理工具 Zustand
+
+1. 用你喜欢的包管理器安装 **zustand：**
+
+::: code-group
+
+```bash [pnpm]
+pnpm install zustand
+```
+
+```bash [yarn]
+yarn add zustand
+```
+
+```bash [npm]
+npm install zustand
+```
+
+:::
+
+2. 创建 src/store/setting.ts 文件
 
 ```sh
 └── src/
     ├── store/
-        ├── index.ts  // store 配置文件
+        ├── setting.ts
 ```
 
 ```ts
-import { App } from 'vue';
-import { createPinia } from 'pinia';
+import { create } from 'zustand';
 
-// 创建pinia实例
-const store = createPinia();
-
-// 配置pinia
-export function setupStore(app: App<Element>) {
-  app.use(store);
+/**
+ * 系统设置store类型
+ */
+export interface settingsStoreType {
+  isDark: boolean;
+  setThemeDark: (value: boolean) => void;
 }
 
-export { store };
+export const useSettingStore = create<settingsStoreType>()((set) => ({
+  isDark: false, // 深色模式 切换暗黑模式
+
+  // 设置暗黑模式
+  setThemeDark: (value: boolean) => set({ isDark: value }),
+}));
 ```
 
-3. 在 main.ts 文件中挂载 Pinia 配置
+#### 集成 即时原子 CSS 引擎 UnoCSS
 
-```ts
-import { createApp } from 'vue';
-+ import { setupStore } from '@/store';
-import App from './App.vue';
-
-
-function bootstrap() {
-  // 创建实例
-  const app = createApp(App);
-
-+  // 配置 store
-+  setupStore(app);
-
-
-  app.mount('#app');
-}
-
-bootstrap();
-```
-
-#### 集成 CSS 预编译器 Sass
-
-本项目使用 CSS 预编译器 Sass，直接安装为开发依赖即可。Vite 内部已帮我们集成了相关的 loader，不需要额外配置。
+本项目使用 即时原子 CSS 引擎 UnoCSS。
 
 1. 安装
 
 ::: code-group
 
 ```bash [pnpm]
-pnpm add -D sass
+pnpm add -D unocss
 ```
 
 ```bash [yarn]
-yarn add -D sass
+yarn add -D unocss
 ```
 
 ```bash [npm]
-npm i sass -D
+npm install -D unocss
 ```
 
 :::
 
-2. 使用
+2. 安装插件：
 
-```html
-<style lang="scss">
-  ...
-</style>
+```
+// vite.config.ts
+import React from '@vitejs/plugin-react'
+import UnoCSS from 'unocss/vite'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    UnoCSS(),
+    React(),
+  ],
+})
+```
+
+3. 创建 `uno.config.ts` 文件：
+
+```
+// uno.config.ts
+import { defineConfig } from 'unocss'
+
+export default defineConfig({
+  // ...UnoCSS options
+})
+```
+
+4. 将 `virtual:uno.css` 添加到您的主入口文件：
+
+```
+// main.tsx
+import 'virtual:uno.css'
 ```
 
 ### 代码规范
@@ -378,15 +394,15 @@ ESLint 是一款用于查找并报告代码中问题的工具，并且支持部�
 ::: code-group
 
 ```bash [pnpm]
-pnpm i eslint eslint-plugin-import eslint-plugin-simple-import-sort eslint-plugin-vue -D
+pnpm i eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh eslint-plugin-simple-import-sort -D
 ```
 
 ```bash [yarn]
-yarn add -D eslint eslint-plugin-import eslint-plugin-simple-import-sort eslint-plugin-vue
+yarn add -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh eslint-plugin-simple-import-sort
 ```
 
 ```bash [npm]
-npm install -D eslint eslint-plugin-import eslint-plugin-simple-import-sort eslint-plugin-vue
+npm install -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh eslint-plugin-simple-import-sort
 ```
 
 :::
@@ -398,33 +414,45 @@ npm install -D eslint eslint-plugin-import eslint-plugin-simple-import-sort esli
 ```js
 module.exports = {
   root: true,
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  // 指定如何解析语法
-  parser: 'vue-eslint-parser',
-  // 优先级低于 parse 的语法解析配置
+  env: { browser: true, node: true, es2020: true },
+
+  /* 继承某些已有的规则 */
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended', // 添加 prettier 插件
+  ],
+
+  /* 指定如何解析语法 */
+  parser: '@typescript-eslint/parser',
+
+  /* 优先级低于 parse 的语法解析配置 */
   parserOptions: {
-    parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     sourceType: 'module',
-  },
-  // 继承某些已有的规则
-  extends: ['plugin:vue/vue3-essential', 'plugin:@typescript-eslint/recommended'],
-  plugins: ['vue', '@typescript-eslint', 'import', 'simple-import-sort'],
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      parser: '@typescript-eslint/parser',
+    jsxPragma: 'React',
+    ecmaFeatures: {
+      jsx: true,
     },
-  ],
+  },
+
+  /* 插件 */
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'react-refresh', 'simple-import-sort'],
+
+  /**
+   * 自定义规则
+   * "off" 或 0    ==>  关闭规则
+   * "warn" 或 1   ==>  打开的规则作为警告（不影响代码执行）
+   * "error" 或 2  ==>  规则作为一个错误（代码不能执行，界面报错）
+   */
   rules: {
-    '@typescript-eslint/ban-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/promise-function-async': 'off',
-    'vue/multi-word-component-names': 'off',
+    'react-refresh/only-export-components': 'warn',
+    '@typescript-eslint/no-explicit-any': 'off', // 禁止使用 any 类型
+    '@typescript-eslint/ban-types': 'off', // 禁止使用特定类型
+    '@typescript-eslint/no-non-null-assertion': 'off', // 不允许使用后缀运算符的非空断言(!)
+    'react-hooks/rules-of-hooks': 'off',
+    'react-hooks/exhaustive-deps': 'off',
     'simple-import-sort/imports': [
       'error',
       {
@@ -439,7 +467,7 @@ module.exports = {
             `^@/config$`,
             `^@/hooks$`,
             `^@/plugins$`,
-            `^@/router$`,
+            `^@/routers$`,
             `^@/store$`,
             `^@/styles$`,
             `^@/utils$`,
@@ -492,15 +520,15 @@ Stylelint 是一个强大的，现代的代码检查工具，与 ESLint 类似�
 ::: code-group
 
 ```bash [pnpm]
-pnpm add -D stylelint stylelint-config-html stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-recommended-vue stylelint-config-standard-scss
+pnpm add -D stylelint stylelint-config-recess-order stylelint-config-standard stylelint-less stylelint-prettier
 ```
 
 ```bash [yarn]
-yarn add -D stylelint stylelint-config-html stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-recommended-vue stylelint-config-standard-scss
+yarn add -D stylelint stylelint-config-recess-order stylelint-config-standard stylelint-less stylelint-prettier
 ```
 
 ```bash [npm]
-npm install -D stylelint stylelint-config-html stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-recommended-vue stylelint-config-standard-scss
+npm install -D stylelint stylelint-config-recess-order stylelint-config-standard stylelint-less stylelint-prettier
 ```
 
 :::
@@ -512,35 +540,25 @@ npm install -D stylelint stylelint-config-html stylelint-config-recess-order sty
 
 module.exports = {
   root: true,
-  // 继承某些已有的规则
+
+  /* 继承某些已有的规则 */
   extends: [
-    'stylelint-config-html/vue', // 配置 vue 中 template 样式格式化
-    'stylelint-config-standard-scss', // 配置 stylelint scss 插件
-    'stylelint-config-recommended-vue/scss', // 配置 vue 中 scss 样式格式化
-    'stylelint-config-recess-order', // 配置 stylelint css 属性书写顺序插件,
+    'stylelint-config-standard', // 配置stylelint拓展插件
+    'stylelint-prettier/recommended', // 在 Stylelint 中集成 Prettier，使其成为 Stylelint 规则的一部分。
+    'stylelint-config-recess-order', // 配置stylelint css属性书写顺序插件,
   ],
-  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.md', '**/*.yaml'],
-  rules: {
-    'keyframes-name-pattern': null,
-    'function-url-quotes': 'always', // URL 的引号 "always(必须加上引号)"|"never(没有引号)"
-    'color-hex-length': 'short', // 指定 16 进制颜色的简写或扩写 "short(16进制简写)"|"long(16进制扩写)"
-    'rule-empty-line-before': 'never', // 要求或禁止在规则之前的空行 "always(规则之前必须始终有一个空行)"|"never(规则前绝不能有空行)"|"always-multi-line(多行规则之前必须始终有一个空行)"|"never-multi-line(多行规则之前绝不能有空行)"
-    'font-family-no-missing-generic-family-keyword': null, // 禁止在字体族名称列表中缺少通用字体族关键字
-    'scss/at-import-partial-extension': null, // 解决不能使用 @import 引入 scss 文件
-    'property-no-unknown': null, // 禁止未知的属性
-    'no-empty-source': null, // 禁止空源码
-    'selector-class-pattern': null, // 强制选择器类名的格式
-    'value-no-vendor-prefix': null, // 关闭 vendor-prefix (为了解决多行省略 -webkit-box)
-    'no-descending-specificity': null, // 不允许较低特异性的选择器出现在覆盖较高特异性的选择器
-    'value-keyword-case': null, // 解决在 scss 中使用 v-bind 大写单词报错
-    'no-duplicate-selectors': null,
-    'selector-pseudo-class-no-unknown': [
-      true,
-      {
-        ignorePseudoClasses: ['global', 'export', 'v-deep', 'deep'],
-      },
-    ],
-  },
+
+  plugins: ['stylelint-less', 'stylelint-prettier'], // 配置stylelint less拓展插件
+
+  /* 自定义规则 */
+  rules: {},
+  // overrides: [
+  //   // 若项目中存在less文件，添加以下配置
+  //   {
+  //     files: ['*.less', '**/*.less'],
+  //     customSyntax: 'postcss-less',
+  //   },
+  // ],
 };
 ```
 
@@ -581,12 +599,13 @@ npm i eslint-plugin-prettier eslint-config-prettier -D
 module.exports = {
   ...
   extends: [
-    'plugin:vue/vue3-essential',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:prettier/recommended', // 添加 prettier 插件
   ],
 
-  plugins: ['vue', '@typescript-eslint', 'import', 'prettier', 'simple-import-sort'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'react-refresh', 'simple-import-sort'],
   ...
 }
 ```
