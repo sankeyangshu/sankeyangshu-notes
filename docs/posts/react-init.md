@@ -49,16 +49,16 @@ nvm install stable
 
 ```bash
 # npm 6.x
-npm create vite@latest my-vue-app --template vue-ts
+npm create vite@latest my-react-app --template react-ts
 
 # npm 7+（需要额外的双横线）
-npm create vite@latest my-vue-app -- --template vue-ts
+npm create vite@latest my-react-app -- --template react-ts
 
 # yarn
-yarn create vite my-vue-app --template vue-ts
+yarn create vite my-react-app --template react-ts
 
 # pnpm，推荐使用pnpm
-pnpm create vite my-vue-app --template vue-ts
+pnpm create vite my-react-app --template react-ts
 ```
 
 #### 修改 Vite 配置文件
@@ -70,7 +70,7 @@ Vite 配置文件 `vite.config.ts` 位于根目录下，项目启动时会自动
 ```ts
 import { defineConfig } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-import vue from '@vitejs/plugin-vue';
+import react from '@vitejs/plugin-react';
 import path from 'path'; // 如果编辑器提示 path 模块找不到，则可以安装一下 @types/node -> pnpm i @types/node -D
 
 function resolve(dir: string) {
@@ -79,7 +79,7 @@ function resolve(dir: string) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [react()],
   // 配置别名
   resolve: {
     alias: {
@@ -378,7 +378,7 @@ npx prettier --write .
 // package.json
 "sricpts": {
   // ...
-  "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
+  "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,html,md}\"",
 }
 
 ```
@@ -502,7 +502,7 @@ module.exports = {
 // package.json
 "sricpts": {
   // ...
-  "lint:eslint": "eslint \"{src}/**/*.{vue,ts,tsx}\" --fix",
+  "lint:eslint": "eslint \"{src}/**/*.{ts,tsx}\" --fix",
 }
 
 ```
@@ -570,7 +570,7 @@ module.exports = {
 // package.json
 "sricpts": {
   // ...
-   "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+   "lint:stylelint": "stylelint --fix \"**/*.{less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
 }
 
 ```
@@ -690,11 +690,6 @@ npm install -D lint-staged
   ],
   "package.json": [
     "prettier --write"
-  ],
-  "*.vue": [
-    "eslint --fix",
-    "prettier --write",
-    "stylelint --fix"
   ],
   "*.{scss,less,styl}": [
     "stylelint --fix",
